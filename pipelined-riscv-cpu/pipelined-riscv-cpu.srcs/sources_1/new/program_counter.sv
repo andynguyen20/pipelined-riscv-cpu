@@ -7,7 +7,7 @@ module program_counter(
     output logic [31:0] pc
     );
     
-    always_ff@(posedge clk) begin
+    always_ff@(posedge clk, posedge rst) begin
         if (rst == 1'b1)
             pc <= 32'd0;
         else
